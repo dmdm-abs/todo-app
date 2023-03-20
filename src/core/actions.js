@@ -1,9 +1,14 @@
-const increaseCount = ({ state, data }) => ({
-	count: state.count + data,
+const setValue = ({ data }) => ({
+	currentTodo: data,
 });
 
+const addTodo = ({ state: { currentTodo, todos }},) => ({
+	todos: [...todos, currentTodo],
+	currentTodo: '',
+});
 const actions = {
-	increaseCount,
+	setValue,
+	addTodo,
 };
 
 export default actions;

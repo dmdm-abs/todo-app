@@ -1,7 +1,22 @@
 .App {
 	text-align: center;
+	margin-top: 100px;
+	padding: 100 center;
+
+	.inputBox {
+		outline: none;
+		padding: 5px 5px 5px 20px;
+		font-size: 20px;
+		border-radius: 5px;
+		border: 1px solid gray;
+		margin-right: 20px;
+	}
 
 	button {
 		font-weight: bold;
+		padding: 5px 20px;
+		border: 1px solid white;
+		background-color: rgb(5, 221, 245);
+		color: white;
 	}
 }

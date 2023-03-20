@@ -1,12 +1,17 @@
 import { React } from 'react';
 import './App.scss';
-import SimpleButton from './components/simpleButton';
+import { peek } from '@laufire/utils/debug';
+import Header from './components/Header';
+import Body from './components/Body';
+const App = (context) => {
+	const { state } = context;
 
-const App = ({ state: { count, refreshID }}) =>
-	<div className="App">
-		<div>Count: { count }</div>
-		<div>{ SimpleButton() }</div>
-		<div>Refresh ID: { refreshID }</div>
+	peek(state);
+
+	return <div className="App">
+		<Header { ...context }/>
+		<Body { ...context }/>
 	</div>;
+};
 
 export default App;
