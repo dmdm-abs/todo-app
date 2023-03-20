@@ -1,9 +1,6 @@
 import React from 'react';
 
-const Button = (context) => {
-	const { actions: { addTodo }} = context;
-
-	return <button onClick={ () => addTodo() }> Add</button>;
-};
+const Button = ({ actions: { addTodo }}) =>
+	<button onClick={ () => addTodo() }> Add</button>;
 
 export default Button;

@@ -4,7 +4,7 @@ const Body = (context) => {
 	const { state: { todos }} = context;
 
 	return (
-		<div>{todos.map((todo) => todo)}</div>
+		<div>{todos.map((todo, key) => <div key={ key }>{todo}</div>)}</div>
 	);
 };
 
