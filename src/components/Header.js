@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from './Button';
+import AddTodoButton from './AddTodoButton';
 import InputBox from './InputBox';
 
 const Header = (context) =>
 	<div>
 		<InputBox { ...context }/>
-		<Button { ...context }/>
+		<AddTodoButton { ...context }/>
 	</div>;
 
 export default Header;
