@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Body = (context) => {
+const Todos = (context) => {
 	const { state: { todos }} = context;
 
 	return (
@@ -8,4 +8,4 @@ const Body = (context) => {
 	);
 };
 
-export default Body;
+export default Todos;

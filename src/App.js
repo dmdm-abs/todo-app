@@ -1,12 +1,12 @@
 import { React } from 'react';
 import './App.scss';
 import Header from './components/Header';
-import Body from './components/Body';
+import Todos from './components/Todos';
 const App = (context) =>
 	<div className="App">
-		<span>Todo-App</span>
+		<h2>Todo-App</h2>
 		<Header { ...context }/>
-		<Body { ...context }/>
+		<Todos { ...context }/>
 	</div>;
 
 export default App;
