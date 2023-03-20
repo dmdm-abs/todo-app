@@ -1,4 +1,4 @@
-const setValue = ({ data }) => ({
+const setCurrentTodo = ({ data }) => ({
 	currentTodo: data,
 });
 
@@ -7,7 +7,7 @@ const addTodo = ({ state: { currentTodo, todos }},) => ({
 	currentTodo: '',
 });
 const actions = {
-	setValue,
+	setCurrentTodo,
 	addTodo,
 };
 
