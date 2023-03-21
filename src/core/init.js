@@ -1,7 +1,4 @@
-import SampleService from '../services/sample';
 
-const init = () => {
-	SampleService.sayHi();
-};
+const init = () => {};
 
 export default init;
