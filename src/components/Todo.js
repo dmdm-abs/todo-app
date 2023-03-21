@@ -3,7 +3,7 @@ import React from 'react';
 const Todo = (context) => {
 	const {
 		data: { todo: { text, id, isCompleted }},
-		actions: { handleChange, removeTodo },
+		actions: { changeStatus, removeTodo },
 	} = context;
 
 	return (
@@ -11,7 +11,7 @@ const Todo = (context) => {
 			<input
 				type="checkbox"
 				checked={ isCompleted }
-				onChange={ () => handleChange(id) }
+				onChange={ () => changeStatus(id) }
 			/>
 			<span>{text}</span>
 			<button onClick={ () => removeTodo(id) }>Delete</button>

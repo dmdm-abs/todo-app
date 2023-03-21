@@ -7,7 +7,7 @@ const createTodo = ({ state: { currentTodo }, config: { idLength }}) => ({
 	isCompleted: false,
 });
 
-const updateTodos = ({ state: { todos }, data: targetId }) =>
+const changeStatus = ({ state: { todos }, data: targetId }) =>
 	map(todos, (todo) => {
 		const { id, isCompleted } = todo;
 
@@ -22,7 +22,7 @@ const removeTodo = ({ state: { todos }, data: targetId }) =>
 
 const TodoManager = {
 	createTodo,
-	updateTodos,
+	changeStatus,
 	removeTodo,
 };
 

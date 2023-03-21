@@ -5,7 +5,6 @@ import Todos from './components/Todos';
 
 const App = (context) =>
 	<div className="App">
-		<h2>Todo-App</h2>
 		<Header { ...context }/>
 		<Todos { ...context }/>
 	</div>;

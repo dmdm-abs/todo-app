@@ -13,8 +13,8 @@ const addTodo = (context) => {
 	};
 };
 
-const handleChange = (context) => ({
-	todos: TodoManager.updateTodos({ ...context }),
+const changeStatus = (context) => ({
+	todos: TodoManager.changeStatus({ ...context }),
 });
 
 const removeTodo = (context) => ({
@@ -24,7 +24,7 @@ const removeTodo = (context) => ({
 const actions = {
 	setCurrentTodo,
 	addTodo,
-	handleChange,
+	changeStatus,
 	removeTodo,
 };
 
