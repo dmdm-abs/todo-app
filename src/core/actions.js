@@ -25,12 +25,17 @@ const removeTodo = (context) => ({
 	todos: TodoManager.removeTodo({ ...context }),
 });
 
+const clearTodos = (context) => ({
+	todos: TodoManager.clearTodos({ ...context }),
+});
+
 const actions = {
 	setCurrentTodo,
 	addTodo,
 	changeStatus,
 	changeAllStatus,
 	removeTodo,
+	clearTodos,
 };
 
 export default actions;

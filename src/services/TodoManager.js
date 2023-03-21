@@ -24,10 +24,13 @@ const changeAllStatus = ({ state: { todos }, data: status }) =>
 	}));
 
 const checkAllStatus = ({ state: { todos }}) =>
-	todos.every(({ isCompleted }) => isCompleted);
+	todos.length && todos.every(({ isCompleted }) => isCompleted);
 
 const removeTodo = ({ state: { todos }, data: targetId }) =>
 	filter(todos, ({ id }) => id !== targetId);
+
+const clearTodos = ({ state: { todos }}) =>
+	todos.filter(({ isCompleted }) => !isCompleted);
 
 const TodoManager = {
 	createTodo,
@@ -35,6 +38,7 @@ const TodoManager = {
 	changeAllStatus,
 	checkAllStatus,
 	removeTodo,
+	clearTodos,
 };
 
 export default TodoManager;
