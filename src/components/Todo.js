@@ -1,11 +1,9 @@
-import { peek } from '@laufire/utils/debug';
 import React from 'react';
 
 const Todo = (context) => {
-	const { data: { todo }} = peek(context, 'todo');
+	const { data: { todo }} = context;
 
-	return <div>{todo}</div>;
-}
-	;
+	return <div>{todo.text}</div>;
+};
 
 export default Todo;
