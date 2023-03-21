@@ -1,5 +1,16 @@
 const seed = {
-	todos: [],
+	todos: [
+		{
+			id: 'HIHIU',
+			text: 'Durai',
+			isCompleted: false,
+		},
+		{
+			id: 'LKIDI',
+			text: 'Murugan',
+			isCompleted: false,
+		},
+	],
 	currentTodo: '',
 };
 
