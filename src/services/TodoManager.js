@@ -1,9 +1,10 @@
+import { map } from '@laufire/utils/collection';
 import { rndString } from '@laufire/utils/random';
 
 const updateTodos = (context) => {
 	const { state: { todos }, data: targetId } = context;
 
-	return todos.map((todo) => {
+	return map(todos, (todo) => {
 		const { id, isCompleted } = todo;
 
 		return {
