@@ -29,6 +29,10 @@ const clearCompletedTodos = (context) => ({
 	todos: TodoManager.clearCompletedTodos({ ...context }),
 });
 
+const changeSelectedTab = ({ data }) => ({
+	selectedTab: data,
+});
+
 const actions = {
 	setCurrentTodo,
 	addTodo,
@@ -36,6 +40,7 @@ const actions = {
 	changeAllStatus,
 	removeTodo,
 	clearCompletedTodos,
+	changeSelectedTab,
 };
 
 export default actions;

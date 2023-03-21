@@ -12,6 +12,7 @@ const seed = {
 		},
 	],
 	currentTodo: '',
+	selectedTab: 'all',
 };
 
 export default seed;

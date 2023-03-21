@@ -1,4 +1,4 @@
-import { filter, map } from '@laufire/utils/collection';
+import { map } from '@laufire/utils/collection';
 import { rndString } from '@laufire/utils/random';
 
 const createTodo = ({ state: { currentTodo }, config: { idLength }}) => ({
@@ -27,10 +27,22 @@ const checkAllStatus = ({ state: { todos }}) =>
 	todos.length && todos.every(({ isCompleted }) => isCompleted);
 
 const removeTodo = ({ state: { todos }, data: targetId }) =>
-	filter(todos, ({ id }) => id !== targetId);
+	todos.filter(({ id }) => id !== targetId);
 
 const clearCompletedTodos = ({ state: { todos }}) =>
 	todos.filter(({ isCompleted }) => !isCompleted);
+
+const operations = {
+	all: (todos) => todos.map((todo) => todo),
+	active: (todos) => todos.filter(({ isCompleted }) => !isCompleted),
+	completed: (todos) => todos.filter(({ isCompleted }) => isCompleted),
+};
+
+const filterTodos = (context) => {
+	const { state: { todos, selectedTab }} = context;
+
+	return operations[selectedTab](todos);
+};
 
 const TodoManager = {
 	createTodo,
@@ -39,6 +51,7 @@ const TodoManager = {
 	checkAllStatus,
 	removeTodo,
 	clearCompletedTodos,
+	filterTodos,
 };
 
 export default TodoManager;
