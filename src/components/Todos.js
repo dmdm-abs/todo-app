@@ -3,11 +3,18 @@ import React from 'react';
 import Todo from './Todo';
 
 const Todos = (context) => {
-	const { state: { todos }} = context;
+	const { state: { todos }, actions: { changeAllStatus }} = context;
 
 	return (
-		<div>{map(todos, (todo, key) =>
-			<Todo key={ key } { ...{ ...context, data: { todo }} }/>)}
+		<div>
+			<input
+				type="checkbox"
+				onChange={ ({ target: { checked }}) =>
+					changeAllStatus(checked) }
+				// checked={ checkAllStatus }
+			/>
+			{map(todos, (todo, key) =>
+				<Todo key={ key } { ...{ ...context, data: { todo }} }/>)}
 		</div>
 	);
 };

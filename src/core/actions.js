@@ -17,6 +17,10 @@ const changeStatus = (context) => ({
 	todos: TodoManager.changeStatus({ ...context }),
 });
 
+const changeAllStatus = (context) => ({
+	todos: TodoManager.changeAllStatus({ ...context }),
+});
+
 const removeTodo = (context) => ({
 	todos: TodoManager.removeTodo({ ...context }),
 });
@@ -25,6 +29,7 @@ const actions = {
 	setCurrentTodo,
 	addTodo,
 	changeStatus,
+	changeAllStatus,
 	removeTodo,
 };
 
