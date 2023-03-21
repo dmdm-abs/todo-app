@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ClearButton = ({ actions: { clearTodos }}) =>
-	<button onClick={ clearTodos }>clear</button>;
+const ClearButton = ({ actions: { clearCompletedTodos }}) =>
+	<button onClick={ clearCompletedTodos }>clear</button>;
 
 export default ClearButton;

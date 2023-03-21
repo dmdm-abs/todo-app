@@ -25,8 +25,8 @@ const removeTodo = (context) => ({
 	todos: TodoManager.removeTodo({ ...context }),
 });
 
-const clearTodos = (context) => ({
-	todos: TodoManager.clearTodos({ ...context }),
+const clearCompletedTodos = (context) => ({
+	todos: TodoManager.clearCompletedTodos({ ...context }),
 });
 
 const actions = {
@@ -35,7 +35,7 @@ const actions = {
 	changeStatus,
 	changeAllStatus,
 	removeTodo,
-	clearTodos,
+	clearCompletedTodos,
 };
 
 export default actions;

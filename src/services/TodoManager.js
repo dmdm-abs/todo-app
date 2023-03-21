@@ -29,7 +29,7 @@ const checkAllStatus = ({ state: { todos }}) =>
 const removeTodo = ({ state: { todos }, data: targetId }) =>
 	filter(todos, ({ id }) => id !== targetId);
 
-const clearTodos = ({ state: { todos }}) =>
+const clearCompletedTodos = ({ state: { todos }}) =>
 	todos.filter(({ isCompleted }) => !isCompleted);
 
 const TodoManager = {
@@ -38,7 +38,7 @@ const TodoManager = {
 	changeAllStatus,
 	checkAllStatus,
 	removeTodo,
-	clearTodos,
+	clearCompletedTodos,
 };
 
 export default TodoManager;
