@@ -17,19 +17,23 @@ const changeStatus = ({ state: { todos }, data: targetId }) =>
 		};
 	});
 
-const removeTodo = ({ state: { todos }, data: targetId }) =>
-	filter(todos, ({ id }) => id !== targetId);
-
 const changeAllStatus = ({ state: { todos }, data: status }) =>
 	map(todos, (todo) => ({
 		...todo,
 		isCompleted: status,
 	}));
 
+const checkAllStatus = ({ state: { todos }}) =>
+	todos.every(({ isCompleted }) => isCompleted);
+
+const removeTodo = ({ state: { todos }, data: targetId }) =>
+	filter(todos, ({ id }) => id !== targetId);
+
 const TodoManager = {
 	createTodo,
 	changeStatus,
 	changeAllStatus,
+	checkAllStatus,
 	removeTodo,
 };
 
