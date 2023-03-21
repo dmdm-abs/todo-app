@@ -3,7 +3,7 @@ import React from 'react';
 const Todo = (context) => {
 	const {
 		data: { todo: { text, id, isCompleted }},
-		actions: { handleChange },
+		actions: { handleChange, removeTodo },
 	} = context;
 
 	return (
@@ -14,7 +14,7 @@ const Todo = (context) => {
 				onChange={ () => handleChange(id) }
 			/>
 			<span>{text}</span>
-			<button>Clear</button>
+			<button onClick={ () => removeTodo(id) }>Delete</button>
 		</div>
 	);
 };

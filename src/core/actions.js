@@ -17,10 +17,15 @@ const handleChange = (context) => ({
 	todos: TodoManager.updateTodos({ ...context }),
 });
 
+const removeTodo = (context) => ({
+	todos: TodoManager.removeTodo({ ...context }),
+});
+
 const actions = {
 	setCurrentTodo,
 	addTodo,
 	handleChange,
+	removeTodo,
 };
 
 export default actions;
