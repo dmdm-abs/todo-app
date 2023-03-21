@@ -1,20 +1,14 @@
 import { filter, map } from '@laufire/utils/collection';
 import { rndString } from '@laufire/utils/random';
 
-const createTodo = (context) => {
-	const { state: { currentTodo }, config: { idLength }} = context;
+const createTodo = ({ state: { currentTodo }, config: { idLength }}) => ({
+	id: rndString(idLength),
+	text: currentTodo,
+	isCompleted: false,
+});
 
-	return {
-		id: rndString(idLength),
-		text: currentTodo,
-		isCompleted: false,
-	};
-};
-
-const updateTodos = (context) => {
-	const { state: { todos }, data: targetId } = context;
-
-	return map(todos, (todo) => {
+const updateTodos = ({ state: { todos }, data: targetId }) =>
+	map(todos, (todo) => {
 		const { id, isCompleted } = todo;
 
 		return {
@@ -22,7 +16,6 @@ const updateTodos = (context) => {
 			isCompleted: id === targetId ? !isCompleted : isCompleted,
 		};
 	});
-};
 
 const removeTodo = ({ state: { todos }, data: targetId }) =>
 	filter(todos, ({ id }) => id !== targetId);
