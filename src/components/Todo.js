@@ -1,20 +1,18 @@
 import React from 'react';
 
 const Todo = (context) => {
-	const {
-		data: { todo: { text, id, isCompleted }},
-		actions: { changeStatus, removeTodo },
-	} = context;
+	const { data, actions: { changeStatus, removeTodo }} = context;
+	const { text, isCompleted } = data;
 
 	return (
 		<div>
 			<input
 				type="checkbox"
 				checked={ isCompleted }
-				onChange={ () => changeStatus(id) }
+				onChange={ () => changeStatus(data) }
 			/>
 			<span>{text}</span>
-			<button onClick={ () => removeTodo(id) }>Delete</button>
+			<button onClick={ () => removeTodo(data) }>Delete</button>
 		</div>
 	);
 };

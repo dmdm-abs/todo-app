@@ -7,7 +7,7 @@ const createTodo = ({ state: { currentTodo }, config: { idLength }}) => ({
 	isCompleted: false,
 });
 
-const changeStatus = ({ state: { todos }, data: targetId }) =>
+const changeStatus = ({ state: { todos }, data: { id: targetId }}) =>
 	map(todos, (todo) => {
 		const { id, isCompleted } = todo;
 
@@ -26,7 +26,7 @@ const changeAllStatus = ({ state: { todos }, data: status }) =>
 const checkAllStatus = ({ state: { todos }}) =>
 	todos.length && todos.every(({ isCompleted }) => isCompleted);
 
-const removeTodo = ({ state: { todos }, data: targetId }) =>
+const removeTodo = ({ state: { todos }, data: { id: targetId }}) =>
 	todos.filter(({ id }) => id !== targetId);
 
 const clearCompletedTodos = ({ state: { todos }}) =>

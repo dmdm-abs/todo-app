@@ -13,7 +13,7 @@ const Todos = (context) => {
 		<SelectAllTodos { ...context }/>
 		<ClearButton { ...context }/>
 		{map(filteredTodos, (todo, key) =>
-			<Todo key={ key } { ...{ ...context, data: { todo }} }/>)}
+			<Todo key={ key } { ...{ ...context, data: todo } }/>)}
 		<Tabs { ...context }/>
 	</div>;
 };
