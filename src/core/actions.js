@@ -1,10 +1,9 @@
 import TodoManager from '../services/TodoManager';
 
-const setCurrentTodo = ({ data }) => ({
+const setCurrentTodo = ({ state: { currentTodo }, data }) => ({
 	currentTodo: {
-		id: '',
+		...currentTodo,
 		text: data,
-		isCompleted: false,
 	},
 });
 
@@ -13,6 +12,15 @@ const addTodo = (context) => {
 
 	return {
 		todos: [...todos, TodoManager.createTodo(context)],
+		currentTodo: currentTodo,
+	};
+};
+
+const updateTodo = (context) => {
+	const { seed: { currentTodo }} = context;
+
+	return {
+		todos: TodoManager.updateTodo(context),
 		currentTodo: currentTodo,
 	};
 };
@@ -44,6 +52,7 @@ const changeSelectedTab = ({ data }) => ({
 const actions = {
 	setCurrentTodo,
 	addTodo,
+	updateTodo,
 	toggleStatus,
 	toggleAllStatus,
 	editTodo,

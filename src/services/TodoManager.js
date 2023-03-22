@@ -8,6 +8,13 @@ const createTodo = ({ state: { currentTodo: { text }},
 	isCompleted: false,
 });
 
+const updateTodo = (context) => {
+	const { state: { currentTodo, todos }} = context;
+
+	return map(todos, (todo) =>
+		(currentTodo.id === todo.id ? currentTodo : todo));
+};
+
 const toggleStatus = ({ state: { todos }, data: { id: targetId }}) =>
 	map(todos, (todo) => {
 		const { id, isCompleted } = todo;
@@ -47,6 +54,7 @@ const filterTodos = (context) => {
 
 const TodoManager = {
 	createTodo,
+	updateTodo,
 	toggleStatus,
 	toggleAllStatus,
 	checkAllStatus,
