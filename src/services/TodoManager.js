@@ -1,9 +1,10 @@
 import { map } from '@laufire/utils/collection';
 import { rndString } from '@laufire/utils/random';
 
-const createTodo = ({ state: { currentTodo }, config: { idLength }}) => ({
+const createTodo = ({ state: { currentTodo: { text }},
+	config: { idLength }}) => ({
 	id: rndString(idLength),
-	text: currentTodo,
+	text: text,
 	isCompleted: false,
 });
 

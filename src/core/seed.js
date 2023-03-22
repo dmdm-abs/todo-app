@@ -11,7 +11,11 @@ const seed = {
 			isCompleted: false,
 		},
 	],
-	currentTodo: '',
+	currentTodo: {
+		id: '',
+		text: '',
+		isCompleted: false,
+	},
 	selectedTab: 'all',
 };
 

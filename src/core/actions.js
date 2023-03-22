@@ -1,15 +1,19 @@
 import TodoManager from '../services/TodoManager';
 
 const setCurrentTodo = ({ data }) => ({
-	currentTodo: data,
+	currentTodo: {
+		id: '',
+		text: data,
+		isCompleted: false,
+	},
 });
 
 const addTodo = (context) => {
-	const { state: { todos }} = context;
+	const { state: { todos }, seed: { currentTodo }} = context;
 
 	return {
 		todos: [...todos, TodoManager.createTodo(context)],
-		currentTodo: '',
+		currentTodo: currentTodo,
 	};
 };
 

@@ -1,9 +1,12 @@
 import React from 'react';
 
-const InputBox = ({ actions: { setCurrentTodo }, state: { currentTodo }}) =>
+const InputBox = ({
+	actions: { setCurrentTodo },
+	state: { currentTodo: { text }},
+}) =>
 	<input
 		type="text"
-		value={ currentTodo }
+		value={ text }
 		onChange={ ({ target: { value }}) => setCurrentTodo(value) }
 		className="inputBox"
 	/>;
