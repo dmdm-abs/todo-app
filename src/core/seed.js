@@ -12,9 +12,7 @@ const seed = {
 		},
 	],
 	currentTodo: {
-		id: '',
 		text: '',
-		isCompleted: false,
 	},
 	selectedTab: 'all',
 };
