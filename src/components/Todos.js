@@ -3,10 +3,10 @@ import React from 'react';
 import TodoManager from '../services/TodoManager';
 import ClearButton from './ClearButton';
 import SelectAllTodos from './SelectAllTodos';
+import Tabs from './Tabs';
 import Todo from './Todo';
 
 const Todos = (context) => {
-	const { actions: { changeSelectedTab }} = context;
 	const filteredTodos = TodoManager.filterTodos(context);
 
 	return <div>
@@ -14,11 +14,7 @@ const Todos = (context) => {
 		<ClearButton { ...context }/>
 		{map(filteredTodos, (todo, key) =>
 			<Todo key={ key } { ...{ ...context, data: { todo }} }/>)}
-		<button onClick={ () => changeSelectedTab('all') }>All</button>
-		<button onClick={ () => changeSelectedTab('active') }>Active</button>
-		<button
-			onClick={ () => changeSelectedTab('completed') }
-		>completed</button>
+		<Tabs { ...context }/>
 	</div>;
 };
 
