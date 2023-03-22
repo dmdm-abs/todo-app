@@ -17,12 +17,12 @@ const addTodo = (context) => {
 	};
 };
 
-const changeStatus = (context) => ({
-	todos: TodoManager.changeStatus({ ...context }),
+const toggleStatus = (context) => ({
+	todos: TodoManager.toggleStatus({ ...context }),
 });
 
-const changeAllStatus = (context) => ({
-	todos: TodoManager.changeAllStatus({ ...context }),
+const toggleAllStatus = (context) => ({
+	todos: TodoManager.toggleAllStatus({ ...context }),
 });
 
 const removeTodo = (context) => ({
@@ -40,8 +40,8 @@ const changeSelectedTab = ({ data }) => ({
 const actions = {
 	setCurrentTodo,
 	addTodo,
-	changeStatus,
-	changeAllStatus,
+	toggleStatus,
+	toggleAllStatus,
 	removeTodo,
 	clearCompletedTodos,
 	changeSelectedTab,

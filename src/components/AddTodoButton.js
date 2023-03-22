@@ -1,9 +1,12 @@
 import React from 'react';
 
-const AddTodoButton = ({ actions: { addTodo }, state: { currentTodo }}) =>
+const AddTodoButton = ({
+	actions: { addTodo },
+	state: { currentTodo: { text }},
+}) =>
 	<button
 		onClick={ addTodo }
-		disabled={ !currentTodo }
+		disabled={ !text }
 	> Add</button>;
 
 export default AddTodoButton;
