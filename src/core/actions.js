@@ -25,6 +25,10 @@ const toggleAllStatus = (context) => ({
 	todos: TodoManager.toggleAllStatus({ ...context }),
 });
 
+const editTodo = ({ data }) => ({
+	currentTodo: data,
+});
+
 const removeTodo = (context) => ({
 	todos: TodoManager.removeTodo({ ...context }),
 });
@@ -42,6 +46,7 @@ const actions = {
 	addTodo,
 	toggleStatus,
 	toggleAllStatus,
+	editTodo,
 	removeTodo,
 	clearCompletedTodos,
 	changeSelectedTab,

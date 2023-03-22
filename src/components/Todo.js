@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Todo = (context) => {
-	const { data, actions: { toggleStatus, removeTodo }} = context;
+	const { data, actions: { toggleStatus, editTodo, removeTodo }} = context;
 	const { text, isCompleted } = data;
 
 	return (
@@ -11,7 +11,7 @@ const Todo = (context) => {
 				checked={ isCompleted }
 				onChange={ () => toggleStatus(data) }
 			/>
-			<span>{text}</span>
+			<span onClick={ () => editTodo(data) }>{text}</span>
 			<button onClick={ () => removeTodo(data) }>Delete</button>
 		</div>
 	);
