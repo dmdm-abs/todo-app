@@ -8,7 +8,7 @@ const Tabs = (context) => {
 		<button onClick={ () => changeSelectedTab('active') }>Active</button>
 		<button
 			onClick={ () => changeSelectedTab('completed') }
-		>completed</button>
+		>Completed</button>
 	</div>;
 };
 
