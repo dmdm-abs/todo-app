@@ -7,11 +7,12 @@ import Todo from './Todo';
 
 const Todos = (context) => {
 	const { actions: { changeSelectedTab }} = context;
+	const filteredTodos = TodoManager.filterTodos(context);
 
 	return <div>
 		<SelectAllTodos { ...context }/>
 		<ClearButton { ...context }/>
-		{map(TodoManager.filterTodos(context), (todo, key) =>
+		{map(filteredTodos, (todo, key) =>
 			<Todo key={ key } { ...{ ...context, data: { todo }} }/>)}
 		<button onClick={ () => changeSelectedTab('all') }>All</button>
 		<button onClick={ () => changeSelectedTab('active') }>Active</button>
