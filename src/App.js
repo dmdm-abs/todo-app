@@ -1,7 +1,7 @@
 import { React } from 'react';
 import './App.scss';
-import Header from './components/Header';
-import Todos from './components/Todos';
+import Header from './components/Todos/Header';
+import Todos from './components/Todos/Todos';
 
 const App = (context) =>
 	<div className="App">

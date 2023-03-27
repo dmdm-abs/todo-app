@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoManager from '../services/TodoManager';
+import TodoManager from '../../services/TodoManager';
 
 const SelectAllTodos = (context) => {
 	const { actions: { toggleAllStatus }} = context;

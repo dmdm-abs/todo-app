@@ -1,6 +1,6 @@
 import { map } from '@laufire/utils/collection';
 import React from 'react';
-import TodoManager from '../services/TodoManager';
+import TodoManager from '../../services/TodoManager';
 import ClearButton from './ClearButton';
 import SelectAllTodos from './SelectAllTodos';
 import Tabs from './Tabs';
