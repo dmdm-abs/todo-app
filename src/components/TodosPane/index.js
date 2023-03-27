@@ -4,7 +4,7 @@ import Tabs from './Tabs';
 import TodoActions from './TodoActions';
 import Todos from './Todos';
 
-const TodosHeader = (context) =>
+const TodosPane = (context) =>
 	<div>
 		<h2>Todo-App</h2>
 		<InputSection { ...context }/>
@@ -13,4 +13,4 @@ const TodosHeader = (context) =>
 		<Tabs { ...context }/>
 	</div>;
 
-export default TodosHeader;
+export default TodosPane;
