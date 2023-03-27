@@ -1,6 +1,6 @@
 import { map } from '@laufire/utils/collection';
 import React from 'react';
-import TodoManager from '../../services/TodoManager';
+import TodoManager from '../../../services/TodoManager';
 import Todo from './Todo';
 
 const Todos = (context) => {
