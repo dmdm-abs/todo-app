@@ -1,3 +1,4 @@
+import TaskManager from '../services/TaskManager';
 import TodoManager from '../services/TodoManager';
 
 const setCurrentTodo = ({ state: { currentTodo }, data }) => ({
@@ -46,6 +47,16 @@ const changeSelectedTab = ({ data }) => ({
 	selectedTab: data,
 });
 
+const addTask = (context) => {
+	const { state: { tasks }, config: { taskLength }} = context;
+
+	return {
+		tasks: tasks.length < taskLength
+			? [...tasks, TaskManager.createTask(context)]
+			: [...tasks],
+	};
+};
+
 const actions = {
 	setCurrentTodo,
 	addTodo,
@@ -56,6 +67,7 @@ const actions = {
 	removeTodo,
 	clearCompletedTodos,
 	changeSelectedTab,
+	addTask,
 };
 
 export default actions;
