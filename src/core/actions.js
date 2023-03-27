@@ -57,6 +57,15 @@ const addTask = (context) => {
 	};
 };
 
+const addTaskAsTodo = (context) => {
+	const { state: { todos }, data } = context;
+
+	return {
+		todos: [...todos, data],
+		tasks: TaskManager.updateTask({ ...context }),
+	};
+};
+
 const actions = {
 	setCurrentTodo,
 	addTodo,
@@ -68,6 +77,7 @@ const actions = {
 	clearCompletedTodos,
 	changeSelectedTab,
 	addTask,
+	addTaskAsTodo,
 };
 
 export default actions;

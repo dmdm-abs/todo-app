@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Task = (context) => {
-	const { data: { text }} = context;
+	const { data, actions: { addTaskAsTodo }} = context;
 
 	return <div>
-		<span>{text}</span>
-		<button>Add</button>
+		<span>{data.text}</span>
+		<button onClick={ () => addTaskAsTodo(data) }>Add</button>
 	</div>;
 };
 
