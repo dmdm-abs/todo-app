@@ -1,10 +1,7 @@
 import TodoManager from '../services/TodoManager';
 
 const setCurrentTodo = ({ state: { currentTodo }, data }) => ({
-	currentTodo: {
-		...currentTodo,
-		text: data,
-	},
+	currentTodo: { ...currentTodo, text: data },
 });
 
 const addTodo = (context) => {

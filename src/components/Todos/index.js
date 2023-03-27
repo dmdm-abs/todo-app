@@ -8,9 +8,7 @@ const TodosHeader = (context) =>
 		<h2>Todo-App</h2>
 		<InputBox { ...context }/>
 		<ActionTodoButton { ...context }/>
-		<div>
-			<Todos { ...context }/>
-		</div>
+		<Todos { ...context }/>
 	</div>;
 
 export default TodosHeader;

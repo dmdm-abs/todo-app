@@ -1,10 +1,10 @@
 import { React } from 'react';
 import './App.scss';
-import TodosHeader from './components/Todos/TodosHeader';
+import Todos from './components/Todos';
 
 const App = (context) =>
 	<div className="App">
-		<TodosHeader { ...context }/>
+		<Todos { ...context }/>
 	</div>;
 
 export default App;

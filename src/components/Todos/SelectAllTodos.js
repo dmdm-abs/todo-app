@@ -7,11 +7,10 @@ const SelectAllTodos = (context) => {
 	return <div>
 		<input
 			type="checkbox"
-			name="Select All"
 			onChange={ ({ target: { checked }}) => toggleAllStatus(checked) }
 			checked={ TodoManager.checkAllStatus(context) }
 		/>
-		<label id="Select All">Select All</label></div>;
+		<label>Select All</label></div>;
 };
 
 export default SelectAllTodos;
