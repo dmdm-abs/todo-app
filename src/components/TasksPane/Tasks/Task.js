@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Task = (context) => {
-	const { data } = context;
+	const { data: { text }} = context;
 
 	return <div>
-		<span>{data}</span>
+		<span>{text}</span>
 		<button>Add</button>
 	</div>;
 };
