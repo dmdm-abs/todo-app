@@ -15,6 +15,7 @@ const seed = {
 		text: '',
 	},
 	selectedTab: 'all',
+	tasks: [],
 };
 
 export default seed;
