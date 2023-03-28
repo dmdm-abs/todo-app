@@ -6,11 +6,8 @@ const createTask = ({ config: { taskLength, idLength }}) => ({
 	isCompleted: false,
 });
 
-const updateTask = (context) => {
-	const { state: { tasks }, data: { id }} = context;
-
-	return tasks.filter(({ id: taskId }) => taskId !== id);
-};
+const updateTask = ({ state: { tasks }, data: { id }}) =>
+	tasks.filter(({ id: taskId }) => taskId !== id);
 
 const removeTask = ({ state: { tasks }, data: { id: targetId }}) =>
 	tasks.filter(({ id }) => targetId !== id);
