@@ -61,8 +61,8 @@ const addTaskAsTodo = (context) => {
 	const { state: { todos }, data } = context;
 
 	return {
-		todos: [...todos, data],
-		tasks: TaskManager.updateTask({ ...context }),
+		todos: [...todos, { ...data, isCompleted: false }],
+		tasks: TaskManager.removeTask({ ...context }),
 	};
 };
 
