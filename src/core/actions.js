@@ -66,6 +66,10 @@ const addTaskAsTodo = (context) => {
 	};
 };
 
+const removeTask = (context) => ({
+	tasks: TaskManager.removeTask({ ...context }),
+});
+
 const actions = {
 	setCurrentTodo,
 	addTodo,
@@ -78,6 +82,7 @@ const actions = {
 	changeSelectedTab,
 	addTask,
 	addTaskAsTodo,
+	removeTask,
 };
 
 export default actions;

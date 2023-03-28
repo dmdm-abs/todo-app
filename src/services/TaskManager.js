@@ -12,9 +12,13 @@ const updateTask = (context) => {
 	return tasks.filter(({ id: taskId }) => taskId !== id);
 };
 
+const removeTask = ({ state: { tasks }, data: { id: targetId }}) =>
+	tasks.filter(({ id }) => targetId !== id);
+
 const TaskManager = {
 	createTask,
 	updateTask,
+	removeTask,
 };
 
 export default TaskManager;
